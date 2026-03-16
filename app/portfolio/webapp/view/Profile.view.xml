@@ -1,0 +1,123 @@
+<mvc:View controllerName="ui5.portfolio.controller.Profile"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:uxap="sap.uxap"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.m">
+
+    <uxap:ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" showEditHeaderButton="true" editHeaderButtonPress="handleEditBtnPress" headerContentPinned="true" upperCaseAnchorBar="false">
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle>
+                <uxap:expandedHeading>
+                    <HBox>
+                        <Title text="Denise Smith" wrapping="true"/>
+                        <ObjectMarker type="Favorite" class="sapUiTinyMarginBegin"/>
+                    </HBox>
+                </uxap:expandedHeading>
+
+                <uxap:snappedHeading>
+                    <FlexBox fitContainer="true" alignItems="Center">
+                        <Image src="./images/avatar.jpg" class="sapUiTinyMarginEnd"/>
+                        <Title text="Denise Smith" wrapping="true"/>
+                    </FlexBox>
+                </uxap:snappedHeading>
+
+                <uxap:expandedContent>
+                    <Text text="Senior UI Developer"/>
+                </uxap:expandedContent>
+
+                <uxap:snappedContent>
+                    <Text text="Senior UI Developer"/>
+                </uxap:snappedContent>
+
+                <uxap:snappedTitleOnMobile>
+                    <Title text="Senior UI Developer"/>
+                </uxap:snappedTitleOnMobile>
+
+                <uxap:actions>
+                    <OverflowToolbarButton icon="sap-icon://edit" text="edit header" type="Emphasized" tooltip="edit">
+                        <layoutData>
+                            <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                        </layoutData>
+                    </OverflowToolbarButton>
+                    <OverflowToolbarButton icon="sap-icon://pull-down" text="show section" type="Emphasized" tooltip="pull-down"/>
+                    <OverflowToolbarButton icon="sap-icon://show" text="show state" tooltip="show"/>
+                    <Button text="Toggle Footer" press="toggleFooter"/>
+                </uxap:actions>
+            </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
+
+        <uxap:headerContent>
+            <FlexBox wrap="Wrap">
+                <Avatar class="sapUiSmallMarginEnd" src="./test-resources/sap/uxap/images/imageID_275314.png" displaySize="L" />
+
+                <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+                    <Link text="+33 6 4512 5158"/>
+                    <Link text="DeniseSmith@sap.com"/>
+                </layout:VerticalLayout>
+
+                <layout:HorizontalLayout class="sapUiSmallMarginBeginEnd">
+                    <Image src="./test-resources/sap/uxap/images/linkedin.png"/>
+                    <Image src="./test-resources/sap/uxap/images/Twitter.png" class="sapUiSmallMarginBegin"/>
+                </layout:HorizontalLayout>
+
+                <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+                    <Label text="Hello! I am Denise and I use UxAP"/>
+                    <VBox>
+                        <Label text="Achieved goals"/>
+                        <ProgressIndicator percentValue="30" displayValue="30%"/>
+                    </VBox>
+                </layout:VerticalLayout>
+
+                <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+                    <Label text="San Jose, USA"/>
+                </layout:VerticalLayout>
+            </FlexBox>
+        </uxap:headerContent>
+
+        <uxap:sections>
+            <uxap:ObjectPageSection titleUppercase="false" id="goalsSection" title="2014 Goals Plan">
+                <uxap:heading>
+                    <MessageStrip text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." type="Error" />
+                </uxap:heading>
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection id="goalsSectionSS1">
+                        <uxap:blocks>
+                            <Label text="Goal 1: Increase customer satisfaction by 20% through improved user experience and support."/>
+                            <Label text="Goal 2: Launch new product feature by Q3 to enhance market competitiveness."/>
+                            <Label text="Goal 3: Reduce operational costs by 15% through process optimization and automation."/>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection titleUppercase="false" id="personalSection" title="Personal" importance="Medium">
+                <uxap:heading>
+                    <MessageStrip text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." type="Error" />
+                </uxap:heading>
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection id="personalSectionSS1" title="Connect" titleUppercase="false">
+                        <uxap:blocks>
+
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+
+                    <uxap:ObjectPageSubSection id="personalSectionSS2" title="Payment information" titleUppercase="false">
+                        <uxap:blocks>
+
+                        </uxap:blocks>
+                        <uxap:moreBlocks>
+
+                        </uxap:moreBlocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+        <uxap:footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button type="Accept" text="Accept"/>
+                <Button type="Reject" text="Reject"/>
+            </OverflowToolbar>
+        </uxap:footer>
+    </uxap:ObjectPageLayout>
+</mvc:View>

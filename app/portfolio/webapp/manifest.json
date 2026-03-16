@@ -1,0 +1,130 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "ui5.portfolio",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.20.0",
+      "toolsId": "a4c18a99-46f2-4872-851b-78a20c2077a2"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/my-portfolio/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "UI5Portfolio-openUI5Portfolio": {
+          "semanticObject": "UI5Portfolio",
+          "action": "openUI5Portfolio",
+          "title": "{{UI5Portfolio-openUI5Portfolio.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.145.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ui5.portfolio.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "ui5.portfolio.view",
+        "async": true,
+        "viewPath": "ui5.portfolio.view"
+      },
+      "routes": [
+        {
+          "name": "RouteProfile",
+          "pattern": ":?query:",
+          "target": [
+            "TargetProfile"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetProfile": {
+          "id": "Profile",
+          "name": "Profile"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "ui5.portfolio.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

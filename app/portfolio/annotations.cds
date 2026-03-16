@@ -1,0 +1,1 @@
+using MyPortfolio as service from '../../srv/profile-content';

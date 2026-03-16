@@ -1,0 +1,57 @@
+{
+  "services": {
+    "LaunchPage": {
+      "adapter": {
+        "config": {
+          "catalogs": [],
+          "groups": [
+            {
+              "id": "ui5_portfolio",
+              "title": "Portfolio using UI5",
+              "isPreset": true,
+              "isVisible": true,
+              "isGroupLocked": false,
+              "tiles": [
+                {
+                  "id": "UI5Portfolio-openUI5Portfolio",
+                  "tileType": "sap.ushell.ui.tile.StaticTile",
+                  "properties": {
+                    "title": "UI5 Portfolio",
+                    "targetURL": "#UI5Portfolio-openUI5Portfolio"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "NavTargetResolution": {
+      "config": {
+        "enableClientSideTargetResolution": true
+      }
+    },
+    "ClientSideTargetResolution": {
+      "adapter": {
+        "config": {
+          "inbounds": {
+            "UI5Portfolio-openUI5Portfolio": {
+              "semanticObject": "UI5Portfolio",
+              "action": "openUI5Portfolio",
+              "title": "UI5 Portfolio",
+              "signature": {
+                "parameters": {},
+                "additionalParameters": "allowed"
+              },
+              "resolutionResult": {
+                "applicationType": "SAPUI5",
+                "additionalInformation": "SAPUI5.Component=ui5.portfolio",
+                "url": "../portfolio/webapp"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

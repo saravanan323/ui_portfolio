@@ -1,0 +1,89 @@
+{
+  "profile": {
+    "name": "Saravanan",
+    "title": "Senior Technical Consultant",
+    "summary": "SAPUI5 / Fiori Developer with 6+ years of experience specializing in SAPUI5 Freestyle application development and SAP Fiori architecture. Strong expertise in building custom enterprise applications integrated with SAP S/4HANA, SAP Business One, and SAP Business ByDesign using OData services. Experienced in SAP BTP (Cloud Foundry), CAP model development, and SAP HANA Cloud. Skilled in designing scalable, responsive, role-based Fiori applications with end-to-end backend integration.<br/><br/>Primary expertise in SAPUI5 Freestyle development with working knowledge of SAP Fiori Elements (List Report, Object Page, etc..)."
+  },
+  "topSkills": ["SAPUI5", "CAP", "BTP", "S/4HANA"],
+  "skillsList": [
+    { "category": "SAP Technologies", "items": ["SAPUI5 (Freestyle)", "SAP Fiori", "SAP CAP", "SAP HANA Cloud", "SAP BTP (Cloud Foundry)"] },
+    { "category": "Frontend", "items": ["HTML5", "CSS3", "JavaScript (ES6)", "Spring Boot", "MVC Architecture", "JSON", "XML", "Data Binding", "Custom Controls"] },
+    { "category": "Integration & Backend", "items": ["OData V2/V4", "REST APIs", "S/4HANA APIs", "SAP Business One", "SAP Business ByDesign"] },
+    { "category": "Tools", "items": ["SAP Business Application Studio", "VS Code", "Postman", "Git", "Bitbucket"] }
+  ],
+  "experience": [
+    {
+      "company": "Inflexion Infotech Private Limited, Bangalore",
+      "role": "Senior Technical Consultant",
+      "period": "August 2019 - Present",
+      "icon": "sap-icon://company-view",
+      "details": [
+        "Designed and developed SAPUI5 Freestyle applications for SAP S/4HANA business processes.",
+        "Built and consumed OData services for real-time integration with S/4HANA modules (Sales, Customer Master, Product Master).",
+        "Developed custom UI5 components, reusable fragments, and dynamic forms based on business requirements.",
+        "Implemented role-based Fiori applications following SAP UX guidelines.",
+        "Deployed applications on SAP BTP (Cloud Foundry) using CAP-based services.",
+        "Worked on Fiori Elements templates (List Report and Object Page) for metadata-driven applications.",
+        "Optimized performance using efficient model binding, batch processing, and backend query tuning."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "GANADIPATHY Tulsi's Jain Engineering College - AFFILIATED WITH ANNA University, Vellore, Tamil Nadu",
+      "degree": "Master of Computer Applications (MCA)",
+      "period": "June 2016 - April 2019",
+      "icon": "sap-icon://education"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Landmark - Point of Sale (POS) Application",
+      "duration": "Recent Project",
+      "stack": ["SAPUI5 (Freestyle)", "SAP S/4HANA", "OData", "SAP BTP"],
+      "description": "Enterprise-grade POS application enabling retail employees to:\n- Create quick sales orders and generate billing documents\n- Preview and review receipts before final confirmation\n- Maintain Customer Master data\n- Create quotations and convert them into Sales Orders\n- View Product Master details\n- Check plant-level stock availability in real-time",
+      "contributions": "Developed fully custom SAPUI5 Freestyle UI optimized for fast retail transactions.\nIntegrated with SAP S/4HANA Sales and Distribution (SD) module via OData services.\nImplemented real-time stock validation using plant-level availability checks.\nDesigned responsive layout for high-speed counter operations.\nEnhanced user experience by minimizing navigation steps and improving data validation.",
+      "image": "sap-icon://retail-store"
+    },
+    {
+      "title": "Lighthouse - Shipping Management Application",
+      "duration": "",
+      "stack": ["SAPUI5", "SAP HANA Cloud", "CAP", "SAP Business One"],
+      "description": "Built responsive SAPUI5 interfaces for shipment and vessel tracking.\nDeveloped CAP-based backend services deployed on SAP BTP.\nIntegrated OData services for seamless backend communication.",
+      "contributions": "Built responsive SAPUI5 interfaces for shipment and vessel tracking.\nDeveloped CAP-based backend services deployed on SAP BTP.\nIntegrated OData services for seamless backend communication.",
+      "image": "sap-icon://shipping-status"
+    },
+    {
+      "title": "PropertyZone - Property Management Solution",
+      "duration": "",
+      "stack": ["SAPUI5", "SAP HANA Cloud", "CAP", "SAP S/4HANA"],
+      "description": "Developed custom SAPUI5 components for lease and sales management.\nIntegrated S/4HANA using OData APIs.\nImplemented role-based UI and dynamic filtering.",
+      "contributions": "Developed custom SAPUI5 components for lease and sales management.\nIntegrated S/4HANA using OData APIs.\nImplemented role-based UI and dynamic filtering.",
+      "image": "sap-icon://home"
+    },
+    {
+      "title": "PAYROLL",
+      "duration": "",
+      "stack": ["SAPUI5", "HANA Cloud", "CAP", "SAP Business One"],
+      "description": "Designed SAPUI5-based payroll interface.\nDeveloped backend logic using CAP and HANA SQL.\nAutomated tax calculation and payslip generation.",
+      "contributions": "Designed SAPUI5-based payroll interface.\nDeveloped backend logic using CAP and HANA SQL.\nAutomated tax calculation and payslip generation.",
+      "image": "sap-icon://employee-pane"
+    },
+    {
+      "title": "SHOPPING CART",
+      "duration": "",
+      "stack": ["SAPUI5", "Cordova", "SAP Business ByDesign"],
+      "description": "Built responsive UI for product browsing, cart management, and invoice generation.\nIntegrated backend services for order processing.\nOptimized performance for web and mobile users.",
+      "contributions": "Built responsive UI for product browsing, cart management, and invoice generation.\nIntegrated backend services for order processing.\nOptimized performance for web and mobile users.",
+      "image": "sap-icon://cart"
+    }
+  ],
+  "certifications": [
+    "SAP BTP Extensions with SAP Cloud Application Programming Model - Certification",
+    "Creating Applications and Extensions using SAP Build Code - Record of Achievement",
+    "Learn the Basics of SAP Fiori - Record of Achievement"
+  ],
+  "developerEdge": {
+    "codeSnippet": "<mvc:View\n    xmlns:mvc=\"sap.ui.core.mvc\"\n    xmlns=\"sap.m\"\n    xmlns:f=\"sap.f\"\n    xmlns:uxap=\"sap.uxap\"\n    controllerName=\"ui5.portfolio.controller.Main\">\n    <uxap:ObjectPageLayout id=\"ObjectPageLayout\"\n        showTitleInHeaderContent=\"true\"\n        alwaysShowContentHeader=\"false\"\n        preserveHeaderStateOnScroll=\"false\"\n        headerContentPinnable=\"true\"\n        isChildPage=\"false\"\n        upperCaseAnchorBar=\"false\">\n        <!-- Implementation Details -->\n    </uxap:ObjectPageLayout>\n</mvc:View>"
+  }
+}

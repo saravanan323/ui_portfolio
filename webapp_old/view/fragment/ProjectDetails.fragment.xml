@@ -1,0 +1,26 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog
+        id="projectDetailsDialog"
+        title="{title}"
+        contentWidth="500px"
+        class="sapUiResponsivePadding--header sapUiResponsivePadding--content sapUiResponsivePadding--footer">
+        
+        <VBox class="sapUiSmallMargin">
+            <Title text="Project Duration: {duration}" visible="{= ${duration}.length > 0 }" level="H5" class="sapUiTinyMarginBottom"/>
+            
+            <Title text="Key Contributions" level="H4" class="sapUiSmallMarginTop sapUiTinyMarginBottom"/>
+            <Text text="{contributions}" />
+            
+            <Title text="Tech Stack" level="H4" class="sapUiSmallMarginTop sapUiTinyMarginBottom"/>
+            <FlexBox wrap="Wrap" items="{stack}" class="sapUiTinyMarginTop">
+                <Token text="{}" editable="false" class="sapUiTinyMarginEnd sapUiTinyMarginBottom"/>
+            </FlexBox>
+        </VBox>
+
+        <buttons>
+            <Button text="Close" press=".onCloseProjectDialog" type="Emphasized"/>
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

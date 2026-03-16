@@ -1,0 +1,147 @@
+<mvc:View
+    controllerName="ui5.portfolio.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:uxap="sap.uxap"
+    xmlns:suite="sap.suite.ui.commons"
+    xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout"
+    xmlns:card="sap.f.cards"
+    displayBlock="true">
+
+    <uxap:ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" alwaysShowContentHeader="false" headerContentPinnable="true">
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle>
+                <uxap:expandedHeading>
+                    <Title text="{/profile/name}" wrapping="true" class="sapUiSmallMarginEnd"/>
+                </uxap:expandedHeading>
+                <uxap:snappedHeading>
+                    <Title text="{/profile/name}" wrapping="true"/>
+                </uxap:snappedHeading>
+                <uxap:expandedContent>
+                    <Text text="{/profile/title}"/>
+                </uxap:expandedContent>
+                <uxap:snappedContent>
+                    <Text text="{/profile/title}"/>
+                </uxap:snappedContent>
+                <uxap:actions>
+                    <Button icon="sap-icon://half-moon" press=".onThemeSwitch" tooltip="Toggle Theme (Morning/Evening Horizon)" type="Transparent"/>
+                    <Avatar initials="{= ${/profile/name}.charAt(0) }" displaySize="XS" class="sapUiTinyMarginBegin"/>
+                </uxap:actions>
+            </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
+
+        <uxap:headerContent>
+            <FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+                <Avatar src="sap-icon://person-placeholder" displaySize="L" class="sapUiTinyMarginEnd sapUiTinyMarginBottom"/>
+                <VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                    <Title text="Top Skills" class="sapUiTinyMarginBottom"/>
+                    <FlexBox wrap="Wrap" items="{/topSkills}">
+                        <GenericTag text="{}" status="Success" class="sapUiTinyMarginEnd sapUiTinyMarginBottom" design="StatusIconHidden"/>
+                    </FlexBox>
+                </VBox>
+            </FlexBox>
+        </uxap:headerContent>
+
+        <uxap:sections>
+            <!-- About Section -->
+            <uxap:ObjectPageSection title="About">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <FormattedText htmlText="{/profile/summary}" class="sapUiSmallMargin"/>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <!-- Experience Section -->
+            <uxap:ObjectPageSection title="Experience">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <suite:Timeline id="idTimeline" data="{/experience}" enableScroll="false" sortOldestFirst="false">
+                                <suite:content>
+                                    <suite:TimelineItem
+                                        title="{role}"
+                                        dateTime="{period}"
+                                        userName="{company}"
+                                        icon="{icon}">
+                                        <suite:embeddedControl>
+                                            <VBox items="{details}" class="sapUiTinyMarginTop">
+                                                <Text text="• {}" class="sapUiTinyMarginBottom"/>
+                                            </VBox>
+                                        </suite:embeddedControl>
+                                    </suite:TimelineItem>
+                                </suite:content>
+                            </suite:Timeline>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <!-- Projects Section -->
+            <uxap:ObjectPageSection title="Project Showcase">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <f:GridList id="projectsGrid" items="{/projects}" class="sapUiSmallMargin">
+                                <f:customLayout>
+                                    <layout:cssgrid.GridBoxLayout boxWidth="22rem" />
+                                </f:customLayout>
+                                <f:GridListItem type="Active" press=".onProjectPress">
+                                    <VBox class="sapUiSmallMargin">
+                                        <HBox justifyContent="SpaceBetween" alignItems="Center">
+                                            <Title text="{title}" level="H3"/>
+                                            <core:Icon src="{image}" size="1.5rem" color="#0070F2"/>
+                                        </HBox>
+                                        <Text text="{description}" maxLines="3" class="sapUiTinyMarginTop sapUiTinyMarginBottom"/>
+                                        <FlexBox wrap="Wrap" items="{stack}" class="sapUiTinyMarginTop">
+                                            <Token text="{}" editable="false" class="sapUiTinyMarginEnd sapUiTinyMarginBottom"/>
+                                        </FlexBox>
+                                        <Button text="View Details" press=".onProjectPress" type="Emphasized" class="sapUiSmallMarginTop"/>
+                                    </VBox>
+                                </f:GridListItem>
+                            </f:GridList>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <!-- Skills Cloud Section -->
+            <uxap:ObjectPageSection title="Skills Cloud">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <VBox items="{/skillsList}" class="sapUiSmallMargin">
+                                <VBox class="sapUiSmallMarginBottom">
+                                    <Title text="{category}" level="H4" class="sapUiTinyMarginBottom"/>
+                                    <FlexBox wrap="Wrap" items="{items}">
+                                        <Token text="{}" editable="false" class="sapUiTinyMarginEnd sapUiTinyMarginBottom"/>
+                                    </FlexBox>
+                                </VBox>
+                            </VBox>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <!-- Developer's Edge Section -->
+            <uxap:ObjectPageSection title="Developer's Edge">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection>
+                        <uxap:blocks>
+                            <VBox class="sapUiSmallMargin">
+                                <Title text="Technical Deep Dive (Code Snippet)" level="H4" class="sapUiSmallMarginBottom"/>
+                                <Text text="A showcase of clean SAPUI5 XML View architecture using SAP Theme Horizon:" class="sapUiTinyMarginBottom"/>
+                                <FormattedText htmlText="&lt;pre style='background-color:#1c2228;color:#fff;padding:1rem;border-radius:4px;overflow:auto'&gt;{/developerEdge/codeSnippet}&lt;/pre&gt;" />
+                            </VBox>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+        </uxap:sections>
+    </uxap:ObjectPageLayout>
+</mvc:View>
